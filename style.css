@@ -1,0 +1,124 @@
+body {
+    background-color: #a4d1ed;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-around;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 2;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+}
+
+a {
+    color: #212529;
+}
+
+a:hover {
+    color: #354453;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #c1c9d1;
+    border-radius: 0.25rem;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e4eff6;
+}
+
+footer {
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: aliceblue;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 5rem;
+    border-radius: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+#reset {
+    margin-top: 1rem;
+}
+
+#reset button {
+    border: rgb(237, 134, 134) 1px solid;
+}
+
+#reset button:hover {
+    background-color: rgb(237, 134, 134);
+    color: white;
+}
+
+#player-choices {
+    margin: 2rem 0;
+}
+
+#player-choices button {
+    font-size: 4rem;
+    padding: 0.5rem 1.5rem;
+}
