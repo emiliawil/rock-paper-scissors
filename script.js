@@ -8,6 +8,7 @@ const playerScore = document.querySelector('#player-score');
 const computerScore = document.querySelector('#computer-score');
 const rounds = document.querySelector('#round-count');
 const resetBtn = document.querySelector('#reset');
+const choiceButtons = document.querySelectorAll('.choice-button');
 
 // variables
 
@@ -22,15 +23,19 @@ let roundCount = 0;
 function computerPlay() {
     let random = Math.floor(Math.random() * 3);
     if (random === 0) {
+        rockBtn.classList.add('red-border');
         return 'rock';
     } else if (random === 1) {
+        paperBtn.classList.add('red-border');
         return 'paper';
     } else {
+        scissorsBtn.classList.add('red-border');
         return 'scissors';
     }
 }
 
 function playRound(playerSelection, computerSelection) {
+    
     roundCount++;
     rounds.textContent = roundCount;
 
@@ -61,7 +66,15 @@ function playRound(playerSelection, computerSelection) {
     } else {
         result.textContent = 'It\'s a tie!';
     }
-   
+    setTimeout(resetButtons, 1000);
+    
+}
+
+function resetButtons() {
+    choiceButtons.forEach(button => {
+        button.classList.remove('green-bg', 'red-border');
+        button.disabled = false;
+    });
 }
 
 function reset() {
@@ -77,23 +90,44 @@ function reset() {
 // event listeners
 
 rockBtn.addEventListener('click', () => {
-    playerSelection = 'rock';
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+    choiceButtons.forEach(button => {
+        button.disabled = true;
+    });
+    rockBtn.classList.add('green-bg');
+    result.textContent = 'You chose Rock!';
+    setTimeout(()=>{
+        playerSelection = 'rock';
+        computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+       }, 1000)
 }
 );
 
 paperBtn.addEventListener('click', () => {
+    paperBtn.classList.add('green-bg');
+    choiceButtons.forEach(button => {
+        button.disabled = true;
+    });
+    result.textContent = 'You chose Paper!';
+    setTimeout(()=>{
     playerSelection = 'paper';
     computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+       }, 1000)
 }
 );
 
 scissorsBtn.addEventListener('click', () => {
+    scissorsBtn.classList.add('green-bg');
+    choiceButtons.forEach(button => {
+        button.disabled = true;
+    });
+    result.textContent = 'You chose Scissors!';
+   setTimeout(()=>{
     playerSelection = 'scissors';
     computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
+   }, 1000)
 }
 );
 
